@@ -3,6 +3,7 @@
     <Navigation />
     <Hero />
     <h2 class="headline">Der Online Marktplatz</h2>
+    <MarketMap />
     <h2 class="headline">Die Spender</h2>
     <Socials />
     <Footer />
@@ -11,11 +12,12 @@
 
 <script>
 import Hero from '../components/Hero'
+import MarketMap from '~/components/MarketMap.vue'
 import Socials from '../components/Socials'
 import Navigation from '~/components/Navigation.vue'
 import Footer from '~/components/Footer.vue'
 export default {
-  components: { Navigation, Hero, Socials, Footer },
+  components: { Navigation, Hero, MarketMap, Socials, Footer },
   data() {
     return {
       url: `${process.env.shopUrl}/en?refLink=${process.env.refAddress}`

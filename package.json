@@ -21,6 +21,7 @@
     "express": "^4.16.4",
     "nuxt": "^2.0.0",
     "nuxt-i18n": "^6.6.1",
+    "nuxt-leaflet": "0.0.21",
     "vue-iota-payment": "0.0.31"
   },
   "devDependencies": {

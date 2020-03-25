@@ -48,7 +48,8 @@ module.exports = {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    'nuxt-i18n'
+    'nuxt-i18n',
+    'nuxt-leaflet',
   ],
   i18n: {
     locales: [
