@@ -3,6 +3,10 @@ require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
+  router: {
+    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/city/' : ''
+  },
+  mode: 'universal',
   /*
   ** Headers of the page
   */
