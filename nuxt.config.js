@@ -97,6 +97,7 @@ module.exports = {
     cityUrl: process.env.CITY_URL || 'http://localhost:5000',
     cityTitle: title,
     cityDescription: description,
+    cityHeroImageUrl: process.env.CITY_HERO_IMGAE_URL || '',
   },
   build: {
     transpile: [/^element-ui/],

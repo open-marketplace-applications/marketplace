@@ -1,8 +1,6 @@
 <template>
   <div class="hero">
-    <video id="bg-video" autoplay muted loop>
-      <source src="~/assets/empty_city.mp4" type="video/webm" />
-    </video>
+    <img class="bg-image" :src="heroImageUrl">
     <div class="layer"></div>
     <div class="hello">
       <h1 class="title">{{ title }}</h1>
@@ -29,7 +27,8 @@
 export default {
   data() {
     return {
-      title: process.env.cityTitle
+      title: process.env.cityTitle,
+      heroImageUrl: process.env.cityHeroImageUrl || require('~/assets/hero.png')
     }
   }
 }
@@ -97,6 +96,18 @@ export default {
     }
   }
   video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+    filter: blur(5px);
+    @media only screen and (min-width: 2200px) {
+      height: auto;
+      width: 100%;
+    }
+  }
+  .bg-image {
     position: absolute;
     top: 0;
     left: 0;
