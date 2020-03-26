@@ -5,6 +5,8 @@ const config = require('./config.json')
 const title = process.env.CITY_TITLE ? process.env.CITY_TITLE : config.title;
 const description = process.env.CITY_DESCRIPTION ? process.env.CITY_DESCRIPTION : config.description;
 const gh_repo_name = process.env.GH_REPO_NAME ? process.env.GH_REPO_NAME : config.gh_repo_name;
+const latitude = process.env.CITY_LATITUDE ? process.env.CITY_LATITUDE : config.location.latitude;
+const longitude = process.env.CITY_LONGITUDE ? process.env.CITY_LONGITUDE : config.location.longitude;
 
 module.exports = {
   mode: 'universal',
@@ -99,6 +101,8 @@ module.exports = {
     cityTitle: title,
     cityDescription: description,
     cityHeroImageUrl: process.env.CITY_HERO_IMGAE_URL || '',
+    cityLatitude: latitude,
+    cityLongitude: longitude,
   },
   build: {
     transpile: [/^element-ui/],

@@ -28,7 +28,7 @@ export default {
     return {
       url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
       zoom: 13,
-      center: [46.711456, 10.951586],
+      center: [process.env.cityLatitude, process.env.cityLongitude],
       bounds: null,
       markers: []
     };

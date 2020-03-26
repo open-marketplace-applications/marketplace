@@ -1,5 +1,9 @@
 {
     "title": "Your City - Marktplatz - Open Marketplace Application",
     "description": "Describes your local city.",
-    "github_repo_name": ""
+    "github_repo_name": "",
+    "location": {
+        "latitude": 52.529562,
+        "longitude": 13.413047
+    }
 }

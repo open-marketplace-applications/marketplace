@@ -1,6 +1,6 @@
 export const state = () => ({
-    lat: 46.711456, 
-    lng: 10.951586
+    lat: process.env.cityLatitude, 
+    lng: process.env.cityLongitude
   })
   
   export const mutations = {
