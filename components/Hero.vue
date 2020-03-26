@@ -5,7 +5,7 @@
     </video>
     <div class="layer"></div>
     <div class="hello">
-      <h1 class="title">Südtirol</h1>
+      <h1 class="title">{{ title }}</h1>
       <div class="animated-heading">
         <div class="animated-heading__container">
           <ul class="animated-heading__container__list">
@@ -26,7 +26,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      title: process.env.cityTitle
+    }
+  }
+}
 </script>
 
 <style lang="scss">

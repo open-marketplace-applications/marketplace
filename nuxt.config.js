@@ -1,5 +1,9 @@
 
 require('dotenv').config()
+const config = require('./config.json')
+
+const title = process.env.CITY_TITLE ? process.env.CITY_TITLE : config.title;
+const description = process.env.CITY_DESCRIPTION ? process.env.CITY_DESCRIPTION : config.description;
 
 module.exports = {
   mode: 'universal',
@@ -11,11 +15,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Südtirol Marktplatz - Open Marketplace Application',
+    title: title + ' Marktplatz - Open Marketplace Application}',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Online Einkaufen, Neuigkeiten, Spenden und mehr.' }
+      { hid: 'description', name: 'description', content: description}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -90,7 +94,9 @@ module.exports = {
   ** Build configuration
   */
   env: {
-    cityUrl: process.env.CITY_URL || 'http://localhost:5000'
+    cityUrl: process.env.CITY_URL || 'http://localhost:5000',
+    cityTitle: title,
+    cityDescription: description,
   },
   build: {
     transpile: [/^element-ui/],
