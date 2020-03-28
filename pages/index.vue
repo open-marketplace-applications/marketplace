@@ -5,6 +5,8 @@
     <h2 class="headline">Der Online Marktplatz</h2>
     <MarketMap />
     <Content />
+    <h2 class="headline">Jetzt online bestellen</h2>
+    <OrderOptions />
     <h2 class="headline">Die Spender</h2>
     <Socials />
     <Footer />
@@ -17,9 +19,10 @@ import MarketMap from '~/components/MarketMap.vue'
 import Content from '~/components/Content.vue'
 import Socials from '../components/Socials'
 import Navigation from '~/components/Navigation.vue'
+import OrderOptions from '~/components/OrderOptions.vue'
 import Footer from '~/components/Footer.vue'
 export default {
-  components: { Navigation, Hero, MarketMap, Content, Socials, Footer },
+  components: { Navigation, Hero, MarketMap, Content, OrderOptions, Socials, Footer },
   data() {
     return {
       url: `${process.env.shopUrl}/en?refLink=${process.env.refAddress}`
