@@ -87,7 +87,8 @@
       </div>
       <div v-if="active == 3">
         <h3>Danke!</h3>
-        <p>Vielen Danke für deine Bestelung! Ein Helfer wird bald mit ihrem Einkauf da sein!</p>
+        <p>Vielen Danke für deine Bestelung! Ein Helfer wird bald mit dem Einkauf da sein!</p>
+        <p>Bitte bleibe solange am Telefon erreichbar.</p>
         <nuxt-link to="/">Zurück zur Startseite</nuxt-link>
         <br />
         <br />
@@ -101,6 +102,7 @@
 import Navigation from "../components/Navigation.vue";
 import CreateShop from "../components/CreateShop.vue";
 import Footer from "../components/Footer";
+import { createDeliveryRequest } from "@/utils/delivery";
 
 export default {
   components: { Navigation, CreateShop, Footer },
@@ -112,9 +114,21 @@ export default {
     };
   },
   methods: {
-    send() {
-      this.order_text = "";
-      alert("senden");
+    async send() {
+      this.order_text = "ast";
+      this.loading = true;
+
+      const object = {
+        delivery: this.order_form,
+        order: this.order_text
+      }
+
+
+      let delivery_root = await createDeliveryRequest(object);
+
+      console.log("delivery_root", delivery_root)
+      //localStorage.setItem("shop", parsed);
+      this.loading = false;
       this.next();
     },
     next() {
