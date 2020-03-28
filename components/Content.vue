@@ -83,7 +83,7 @@ export default {
           ],
           link: {
             text: 'Discover Shop',
-            url: ''
+            url: '/shop'
           }
         },
         {
