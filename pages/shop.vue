@@ -2,8 +2,7 @@
   <div id="shop">
     <Navigation />
     <h1>Create your shop</h1>
-      <!-- this component will only be rendered on client-side -->
-        <CreateShop />
+    <CreateShop />
     <Footer />
   </div>
 </template>
