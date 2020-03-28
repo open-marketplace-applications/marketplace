@@ -2,10 +2,8 @@
   <div id="shop">
     <Navigation />
     <h1>Create your shop</h1>
-    <client-only placeholder="Loading...">
       <!-- this component will only be rendered on client-side -->
         <CreateShop />
-    </client-only>
     <Footer />
   </div>
 </template>
