@@ -16,12 +16,21 @@
               </l-popup>
             </l-marker>
 
+            <l-marker v-for="(shop, index) in shops" :key="index" :icon="icon" :lat-lng="shop.location">
+              <l-popup>
+                <h3>{{shop.name}}</h3>
+              </l-popup>
+            </l-marker>
+            
+
           </l-map>
         </client-only>
       </div> 
 </template>
 
 <script>
+const iotaAreaCodes = require('@iota/area-codes');
+
 export default {
   components: {},
   data() {
@@ -30,7 +39,7 @@ export default {
       zoom: 13,
       center: [process.env.cityLatitude, process.env.cityLongitude],
       bounds: null,
-      markers: []
+      shops: []
     };
   },
   methods: {
@@ -48,6 +57,22 @@ export default {
     boundsUpdated(bounds) {
       this.bounds = bounds;
     }
+  },
+
+  async created() {
+        const { data } = await this.$axios.get(process.env.cityUrl + '/shops')
+        console.log("data", data)
+        this.shops = data
+        this.shops.forEach(shop => {
+          const codeArea = iotaAreaCodes.decode(shop.iac);
+          console.log("IOTA Code Area", shop.iac);
+          console.log("IOTA Code Area", codeArea);
+          shop.location = [codeArea.latitude, codeArea.longitude]
+          
+        });
+
+        console.log("data", this.shops)
+
   },
   computed: {
     icon() {
