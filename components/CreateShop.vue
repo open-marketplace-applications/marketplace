@@ -22,7 +22,7 @@
             </el-form-item>
 
             <el-form-item label="Location">
-                <!-- <LocationChooseMap @update="updateIac"/> -->
+                <LocationChooseMap @update="updateIac"/>
             </el-form-item>
           </el-col>
         </el-row>
@@ -35,10 +35,10 @@
 
 <script>
 import { createShop } from './shop/index'
-// import LocationChooseMap from "./LocationChooseMap";
+import LocationChooseMap from "./shop/LocationChooseMap";
 export default {
   name: "CreateShop",
-  components: { },
+  components: { LocationChooseMap },
   props: {
     published: {
       type: Boolean,
@@ -62,11 +62,20 @@ export default {
   methods: {
     onSubmit: async function() {
       // save it to mam!
-        console.log("onSubmit")
+        console.log("onSubmit", this.form)
+        console.log("this.iac)",this.form.iac)
         this.loading = true;
-          if(this.iac && this.showMap) {
+          if(this.iac) {
               this.form.iac = this.iac
         }
+
+
+// DEV 
+        this.loading = false;        
+        return 
+
+// DEV END
+
         let shop = await createShop(this.form);
 
         console.log("shop", shop)
