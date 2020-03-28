@@ -2,6 +2,7 @@ const { channelRoot, createChannel, createMessage, parseMessage, mamAttach, mamF
 import { asciiToTrytes, trytesToAscii } from '@iota/converter'
 
 import { composeAPI } from '@iota/core'
+const api = composeAPI({ provider: "https://nodes.devnet.thetangle.org:443" });
 
 // Setup the details for the channel.
 const mode = 'restricted';
@@ -55,7 +56,6 @@ export const createShop = (
             const decodedMessage = parseMessage(mamMessage.payload, mamMessage.root, sideKey);
             console.log("decodedMessage", decodedMessage)
             // If we want to attach the message to the tangle we first compose the API
-            const api = composeAPI({ provider: "https://comnet.einfachiota.de" });
             // And then attach the message, tagging it if required.
             // Attaching will return the actual transactions attached to the tangle if you need them.
             let test = await mamAttach(api, mamMessage, 3, 10, "MY9MAM");

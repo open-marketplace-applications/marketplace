@@ -65,30 +65,27 @@ export default {
         console.log("onSubmit", this.form)
         console.log("this.iac)",this.form.iac)
         this.loading = true;
-          if(this.iac) {
-              this.form.iac = this.iac
+
+        let shop_root = await createShop(this.form);
+        const registerData = {
+          shop_root
         }
-
-
-// DEV 
-        this.loading = false;        
-        return 
-
-// DEV END
-
-        let shop = await createShop(this.form);
-
-        console.log("shop", shop)
-        // save new shop secrets in database
-        const parsed = JSON.stringify(shop);
         //localStorage.setItem("shop", parsed);
-        this.loading = false;        
+        this.loading = false;
+        
+        // registerToCity
+        this.registerToCity(registerData);
     },
     onCancel() {
       this.$router.push("/");
     },
     updateIac(newIac) {
       this.form.iac = newIac
+    }, 
+    async registerToCity(shop) {
+        console.log("registerToCity", shop)
+        const { data } = await this.$axios.post(process.env.cityUrl + '/shops', shop)
+        console.log("data", data)
     }
   }
 };
