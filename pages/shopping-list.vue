@@ -124,15 +124,24 @@ export default {
       }
 
 
-      let delivery_root = await createDeliveryRequest(object);
+      let order_root = await createDeliveryRequest(object);
 
-      console.log("delivery_root", delivery_root)
+      console.log("order_root", order_root)
       //localStorage.setItem("shop", parsed);
       this.loading = false;
+       const orderData = {
+          order_root
+        }
+      let x = await this.createOrder(orderData)
       this.next();
     },
     next() {
       if (this.active++ > 2) this.active = 0;
+    },
+    async createOrder(order) {
+        console.log("createOrder", order)
+        const { data } = await this.$axios.post(process.env.cityUrl + '/orders', order)
+        console.log("data", data)
     }
   }
 };
