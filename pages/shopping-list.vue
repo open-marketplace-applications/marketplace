@@ -21,6 +21,48 @@
           placeholder="Zum Beispiel: 1 Dunkles Brot, 2 Tomaten, 1 Päckchen Käse"
           v-model="order_text"
         ></el-input>
+
+
+        <el-form-item label="description" prop="description">
+          <el-input
+          type="text"
+          placeholder=""
+          v-model="order_form.public_data.description"
+        ></el-input>
+        </el-form-item>
+
+        <el-form-item label="eastimated_route_length" prop="eastimated_route_length">
+          <el-input
+          type="text"
+          placeholder=""
+          v-model="order_form.public_data.eastimated_route_length"
+        ></el-input>
+        </el-form-item>
+
+        <el-form-item label="eastimated_time" prop="eastimated_time">
+          <el-input
+          type="text"
+          placeholder=""
+          v-model="order_form.public_data.eastimated_time"
+        ></el-input>
+        </el-form-item>
+
+        <el-form-item label="eastimated_price" prop="eastimated_price">
+          <el-input
+          type="text"
+          placeholder=""
+          v-model="order_form.public_data.eastimated_price"
+        ></el-input>
+        </el-form-item>
+
+        <el-form-item label="reward" prop="reward">
+          <el-input
+          type="text"
+          placeholder=""
+          v-model="order_form.public_data.reward"
+        ></el-input>
+        </el-form-item>
+
         <br />
         <br />
         <el-button @click="next" type="primary">Weiter</el-button>
@@ -110,7 +152,11 @@ export default {
     return {
       order_text: "",
       active: 0,
-      order_form: {}
+      order_form: {
+        public_data: {
+
+        }
+      }
     };
   },
   methods: {
