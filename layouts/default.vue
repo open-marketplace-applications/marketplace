@@ -61,10 +61,16 @@ a {
   color: var(--primary);
 }
 :root {
-  --primary: rgba(115, 252, 255, 1);
-  --secondary: #af8766;
-  --primary_50: rgba(115, 252, 255, 0.5);
-  --primary_0: rgba(115, 252, 255, 0);
+
+
+  --primary: rgb(76,182,194);
+  --primary_light: rgb(127,199,189);
+  --white: rgb(255,255,255);
+  --light: rgb(237,247,242);
+  --dark: rgb(25,63,67);
+  --black: rgb(15,40,43);
+  --primary_50: rgba(76,182,194, 0.5);
+  --primary_0: rgba(76,182,194, 0);
   --primary_light: #00dbeb;
   --primary-darken: #03a3af;
   --secondary-2: #5ab0b2;
