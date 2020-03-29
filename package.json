@@ -1,7 +1,7 @@
 {
-  "name": "city",
-  "version": "1.0.0",
-  "description": "My fabulous Nuxt.js project",
+  "name": "oma-city",
+  "version": "0.0.1",
+  "description": "A decentralized, commission-free, local-economy focused online shopping platform.",
   "author": "huhn511",
   "private": true,
   "scripts": {
