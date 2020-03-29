@@ -4,7 +4,7 @@
       <div class="container">
         <div v-bind:class="{ inverted: item.layout_inverted }" class="row">
           <div class="col center-center">
-            <img :src="`/assets/icons/${item.icon}`" alt class="iso-icon" />
+            <img :src="require(`../assets/icons/${item.icon}`)" alt class="iso-icon" />
           </div>
           <div class="col">
             <h2>{{ item.heading }}</h2>
@@ -39,11 +39,28 @@ export default {
       items: [
         {
           layout_inverted: false,
-          heading: 'Marketplace',
+          heading: 'News',
           description:
             '',
           icon: 'blog.svg',
           list: [
+            'Stay up to date.',
+            'Whats new in the city',
+            'Shops can request news to the marketplace.'
+          ],
+          link: {
+            text: 'Read more news',
+            url: ''
+          }
+        },
+        {
+          layout_inverted: true,
+          heading: 'Marketplace',
+          description:
+            '',
+          icon: 'learn.svg',
+          list: [
+
             'All shops in your city.',
             'Shopping in your local is easy with the marketplace.',
             'Instant delivery wihtin the local community.'
@@ -51,23 +68,6 @@ export default {
           link: {
             text: 'Discover the Marketplace',
             url: ''
-          }
-        },
-        {
-          layout_inverted: true,
-          heading: 'News',
-          description:
-            '',
-          icon: 'learn.svg',
-          list: [
-            'Stay up to date.',
-            'Whats new in the city',
-            'Shops can request news to the marketplace.'
-          ],
-          link: {
-            text: 'News coming soon',
-            url: '',
-            disabled: true
           }
         },
         {
