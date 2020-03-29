@@ -8,7 +8,7 @@ const api = composeAPI({ provider: "https://nodes.devnet.thetangle.org:443" });
 const mode = 'restricted';
 const sideKey = 'OMA';
 
-const MVM = process.env.MVM;
+const MVM = parseInt(process.env.MVM);
 
 // Create a new channel using the details
 // You could also load the state from persistence.
