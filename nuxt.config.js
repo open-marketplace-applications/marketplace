@@ -103,6 +103,7 @@ module.exports = {
     cityHeroImageUrl: process.env.CITY_HERO_IMGAE_URL || '',
     cityLatitude: latitude,
     cityLongitude: longitude,
+    MVM: process.env.MVM,
   },
   build: {
     transpile: [/^element-ui/],
