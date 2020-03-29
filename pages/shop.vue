@@ -1,8 +1,10 @@
 <template>
   <div id="shop">
     <Navigation />
-    <h1>Create your shop</h1>
-    <CreateShop />
+    <div class="content">
+      <h1>Create your shop</h1>
+      <CreateShop />
+    </div>
     <Footer />
   </div>
 </template>
@@ -18,8 +20,10 @@ export default {
 </script>
 
 <style lang="scss">
-
 #shop {
-    margin: 150px 20px;
+  .content {
+    max-width: 1200px;
+    margin: 20px auto;
+  }
 }
 </style>
