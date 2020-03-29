@@ -10,6 +10,11 @@
       <el-table-column prop="eastimated_time" label="Time"></el-table-column>
       <el-table-column prop="eastimated_price" label="Price"></el-table-column>
       <el-table-column prop="reward" label="Reward"></el-table-column>
+      <el-table-column label="Action">
+        <template slot-scope="scope">
+          <el-button @click="accept(scope.row)" type="primary">Accept</el-button>
+        </template>
+      </el-table-column>
     </el-table>
     <br />
     <br />
@@ -36,7 +41,32 @@ export default {
     console.log("data", data);
     this.loading = false;
   },
-  methods: {}
+  methods: {
+    accept(order) {
+      console.log("order", order);
+      this.$confirm(
+        "Willst du den Auftrag wirklich annehmen?",
+        "Verbindliche Lieferung",
+        {
+          confirmButtonText: "OK",
+          cancelButtonText: "Cancel",
+          type: "warning"
+        }
+      )
+        .then(() => {
+          this.$message({
+            type: "success",
+            message: "Challenge accepted"
+          });
+        })
+        .catch(() => {
+          this.$message({
+            type: "info",
+            message: "Challenge canceled"
+          });
+        });
+    }
+  }
 };
 </script>
 
