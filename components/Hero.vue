@@ -13,7 +13,7 @@
             <li class="animated-heading__container__list__item">
               Online Einkaufen
             </li>
-            <li class="animated-heading__container__list__item">Der Stadt Chat</li>
+            <li class="animated-heading__container__list__item">Der Lokale Chat</li>
             <li class="animated-heading__container__list__item">Spenden</li>
           </ul>
         </div>
