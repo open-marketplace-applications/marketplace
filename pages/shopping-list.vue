@@ -132,7 +132,7 @@
 import Navigation from "../components/Navigation.vue";
 import CreateShop from "../components/CreateShop.vue";
 import Footer from "../components/Footer";
-import { createDeliveryRequest } from "@/utils/delivery";
+import { createDeliveryRequest, createOrderChannel } from "@/utils/delivery";
 
 export default {
   components: { Navigation, CreateShop, Footer },
@@ -150,9 +150,19 @@ export default {
       this.order_text = "ast";
       this.loading = true;
 
+      const order_channel = {
+        city_url: process.env.cityUrl,
+        public_data: this.order_form.public_data,
+      }
+
+      let {order_channel_root, order_channel_seed} = await createOrderChannel(order_channel);
+
       const object = {
         delivery: this.order_form,
-        order: this.order_text
+        order: this.order_text,
+        public_data: this.order_form.public_data,
+        order_channel_root,
+        order_channel_seed
       };
 
       let order_root = await createDeliveryRequest(object);
