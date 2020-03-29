@@ -1,6 +1,6 @@
 <template>
   <div class="socials section">
-    <h3>Follow us</h3>
+    <h3>get in contact</h3>
     <div class="socials-list">
       <!-- <a href="https://twitter.com/einfachIOTA" target="_blank">
         <img src="~/assets/icons/twitter_large.svg" alt class="social" />
