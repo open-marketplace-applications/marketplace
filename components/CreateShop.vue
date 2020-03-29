@@ -109,6 +109,13 @@ export default {
         shop
       );
       console.log("data", data);
+       this.$message({
+            type: "success",
+            message: "Shop registered to this city."
+          });
+        this.$router.push({
+            path: '/'
+        })
     }
   }
 };
