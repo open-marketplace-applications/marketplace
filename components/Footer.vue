@@ -86,7 +86,7 @@
       margin-right: 0;
     }
     .logo {
-      height: 100px;
+      height: 70px;
       margin-left: -6px;
     }
     h4 {
