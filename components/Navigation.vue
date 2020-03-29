@@ -1,11 +1,6 @@
 <template>
   <div :class="{ open: navOpen }" class="nav">
     <div class="nav__primary">
-      <div class="logo">
-        <nuxt-link to="/">
-          <img src="~/assets/logo.svg" alt />
-        </nuxt-link>
-      </div>
       <div @click="navOpen = !navOpen" class="mobile-btn">
         <div class="mobile-btn__line"></div>
         <div class="mobile-btn__line"></div>
@@ -18,45 +13,27 @@
         <img src="~/assets/icons/nav-edge.svg" alt class="nav-edge" />
         <div class="menu">
           <div class="menu__item active">
-            <a href="/">Home</a>
+            <nuxt-link to="/">Home</nuxt-link>
           </div>
           <div class="menu__item">
-            <a href="https://blog.einfachIOTA.de" target="_blank">Blog</a>
+            <nuxt-link to="/">Marketplace</nuxt-link>
           </div>
           <div class="menu__item">
-            <a href="https://shop.einfachIOTA.de" target="_blank">Shop</a>
-          </div>
-          <div class="menu__item">
-            <a href="https://community.einfachIOTA.de" target="_blank"
-              >Community</a
-            >
+            <nuxt-link to="/">News</nuxt-link>
           </div>
         </div>
         <div class="socials">
-          <div class="socials__item">
-            <a href="https://twitter.com/einfachIOTA" target="_blank">
-              <img src="~/assets/icons/twitter_large.svg" alt />
-            </a>
-          </div>
           <div class="socials__item">
             <a href="https://discord.gg/WdfXseU" target="_blank">
               <img src="~/assets/icons/discord_large.svg" alt />
             </a>
           </div>
-          <div class="socials__item">
-            <a
-              href="https://www.youtube.com/channel/UClEhfr5oh-bbH42XoXO4Pqw"
-              target="_blank"
-            >
-              <img src="~/assets/icons/youtube_large.svg" alt />
-            </a>
-          </div>
         </div>
       </div>
-      <div class="nav__user">
+      <!-- <div class="nav__user">
         <img src="~/assets/icons/nav-edge.svg" alt class="nav-edge" />
         <Advertisement />
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -195,7 +172,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: var(--primary_0);
+      color: var(--white);
       margin: 0 3px;
       a {
         background-color: none;
