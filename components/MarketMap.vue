@@ -10,15 +10,18 @@
             @update:bounds="boundsUpdated"
           >
             <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
-            <l-marker :icon="icon" :lat-lng="center">
+            <l-marker :icon="iconTarget" :lat-lng="center">
               <l-popup>
               
               </l-popup>
             </l-marker>
 
-            <l-marker v-for="(shop, index) in shops" :key="index" :icon="icon" :lat-lng="shop.location">
+            <l-marker v-for="(shop, index) in shops" :key="index" :icon="iconShop" :lat-lng="shop.location">
               <l-popup>
-                <h3>{{shop.name}}</h3>
+                <h3>{{ shop.name }}</h3>
+                <p>{{ shop.description }}</p>
+                <nuxt-link :to="{ path: 'shops', query: { root: shop.root }}">Visit the shop</nuxt-link>
+
               </l-popup>
             </l-marker>
             
@@ -75,14 +78,27 @@ export default {
 
   },
   computed: {
-    icon() {
+    iconTarget() {
         
     if (process.browser) {
       require('vue2-leaflet');
       console.log("th", this)
       console.log("th", L)
       return L.icon({
-        iconUrl: require('@/assets/target-marker.svg'),
+        iconUrl: require('@/assets/icons/target-marker.svg'),
+        iconSize: [40, 40],
+        iconAnchor: [20, 20]
+      })
+        }
+    },
+    iconShop() {
+        
+    if (process.browser) {
+      require('vue2-leaflet');
+      console.log("th", this)
+      console.log("th", L)
+      return L.icon({
+        iconUrl: require('@/assets/icons/shop_smal.svg'),
         iconSize: [40, 40],
         iconAnchor: [20, 20]
       })

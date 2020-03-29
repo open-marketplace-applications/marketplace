@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { createShop } from "./shop/index";
+import { createShop } from "@/utils/shop";
 import LocationChooseMap from "./shop/LocationChooseMap";
 export default {
   name: "CreateShop",
