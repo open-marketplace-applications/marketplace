@@ -31,7 +31,7 @@ export default {
       showMap: true,
       url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
       zoom: 13,
-      center: { lat: 52.529562, lng: 13.413047 },
+      center: [process.env.cityLatitude, process.env.cityLongitude],
       bounds: null,
       showMap: true,
       new_iac: this.iac || "NPHTQORL9XK"
