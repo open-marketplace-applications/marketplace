@@ -1,8 +1,8 @@
 <template>
   <div class="order-options">
-      <nuxt-link class="order-options--link" to="/shopping-list">Zum einfachen Einkaufszettel</nuxt-link>
-      <nuxt-link class="order-options--link" to="/search">Nach Laden suchen</nuxt-link>
-      <nuxt-link class="order-options--link" to="/shops">Alle Läden erkunden</nuxt-link>
+      <nuxt-link class="order-options--link btn btn--primary" to="/shopping-list">Zum einfachen Einkaufszettel</nuxt-link>
+      <nuxt-link class="order-options--link btn btn--primary" to="/search">Nach Laden suchen</nuxt-link>
+      <nuxt-link class="order-options--link btn btn--primary" to="/shops">Alle Läden erkunden</nuxt-link>
   </div>
 </template>
 
@@ -17,8 +17,8 @@ export default {
     width: 100%;
     text-align: center;
     &--link {
-        width: 30%;
-        margin: 20px;
+        width: 300px;
+        margin: 20px auto;
         color: var(--black);
     }
 }
