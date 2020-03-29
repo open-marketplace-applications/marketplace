@@ -2,18 +2,18 @@
   <div class="socials section">
     <h3>Follow us</h3>
     <div class="socials-list">
-      <a href="https://twitter.com/einfachIOTA" target="_blank">
+      <!-- <a href="https://twitter.com/einfachIOTA" target="_blank">
         <img src="~/assets/icons/twitter_large.svg" alt class="social" />
-      </a>
-      <a href="https://discord.gg/WdfXseU" target="_blank">
+      </a> -->
+      <a href="https://discord.gg/YYgZywQ" target="_blank">
         <img src="~/assets/icons/discord_large.svg" alt class="social" />
       </a>
-      <a
+      <!-- <a
         href="https://www.youtube.com/channel/UClEhfr5oh-bbH42XoXO4Pqw"
         target="_blank"
       >
         <img src="~/assets/icons/youtube_large.svg" alt class="social" />
-      </a>
+      </a> -->
     </div>
   </div>
 </template>
