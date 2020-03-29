@@ -7,7 +7,9 @@
     <Content />
     <h2 class="headline">Jetzt online bestellen</h2>
     <OrderOptions />
-    <h2 class="headline">Die Spender</h2>
+    <br />
+    <br />
+    <br />
     <Socials />
     <Footer />
   </div>
