@@ -63,18 +63,19 @@ export default {
   },
 
   async created() {
-        const { data } = await this.$axios.get(process.env.cityUrl + '/shops')
+    try {
+       const { data } = await this.$axios.get(process.env.cityUrl + '/shops')
         console.log("data", data)
         this.shops = data
         this.shops.forEach(shop => {
           const codeArea = iotaAreaCodes.decode(shop.iac);
-          console.log("IOTA Code Area", shop.iac);
-          console.log("IOTA Code Area", codeArea);
           shop.location = [codeArea.latitude, codeArea.longitude]
-          
         });
-
         console.log("data", this.shops)
+    } catch (error) {
+      console.log("error fetching marketmap data", error)
+    }
+       
 
   },
   computed: {
