@@ -19,6 +19,11 @@ $ npm run start
 $ npm run generate
 ```
 
+Add a .env file with 
+```bash
+MWM=9
+```
+
 
 ### Docker
 ```bash

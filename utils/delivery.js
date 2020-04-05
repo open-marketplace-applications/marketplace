@@ -8,7 +8,7 @@ const api = composeAPI({ provider: "https://nodes.devnet.thetangle.org:443" });
 const mode = 'restricted';
 const sideKey = 'OMA';
 
-const MVM = parseInt(process.env.MVM);
+const MWM = parseInt(process.env.MWM);
 
 // Create a new channel using the details
 // You could also load the state from persistence.
@@ -62,7 +62,7 @@ export const createDeliveryRequest = (
             // If we want to attach the message to the tangle we first compose the API
             // And then attach the message, tagging it if required.
             // Attaching will return the actual transactions attached to the tangle if you need them.
-            let test = await mamAttach(api, mamMessage, 3, MVM, "MY9MAM");
+            let test = await mamAttach(api, mamMessage, 3, MWM, "MY9MAM");
             console.log("test", test)
             return resolve(initialRoot);
 
@@ -114,7 +114,7 @@ export const createOrderChannel = (
             // If we want to attach the message to the tangle we first compose the API
             // And then attach the message, tagging it if required.
             // Attaching will return the actual transactions attached to the tangle if you need them.
-            let test = await mamAttach(api, mamMessage, 3, MVM, "MY9MAM");
+            let test = await mamAttach(api, mamMessage, 3, MWM, "MY9MAM");
             console.log("test", test)
             return resolve({root: initialRoot, seed: shop_seed});
 
