@@ -6,9 +6,13 @@ const title = process.env.CITY_TITLE ? process.env.CITY_TITLE : config.title;
 const description = process.env.CITY_DESCRIPTION ? process.env.CITY_DESCRIPTION : config.description;
 const latitude = process.env.CITY_LATITUDE ? process.env.CITY_LATITUDE : config.location.latitude;
 const longitude = process.env.CITY_LONGITUDE ? process.env.CITY_LONGITUDE : config.location.longitude;
+const gh_repo_name = process.env.GH_REPO_NAME ? process.env.GH_REPO_NAME : config.gh_repo_name;
 
 module.exports = {
   mode: 'universal',
+  router: {
+    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/' + gh_repo_name + '/' : ''
+  },
   /*
   ** Headers of the page
   */
