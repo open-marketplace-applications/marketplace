@@ -1,6 +1,7 @@
-# city
+# Open Marketplace
+<img width="200px" src="./assets/logo.svg">
 
-> My fabulous Nuxt.js project
+> A Free and Feeless Marketplace for a Smart City with Local Community Applications 
 
 ## Build Setup
 
@@ -27,5 +28,10 @@ docker run -it -p 3000:3000 marketplace
 
 ```
 
+## Contributors
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+<a href="https://github.com/open-marketplace-applications/marketplace/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=open-marketplace-applications/marketplace" />
+</a>
+
+Made with [contributors-img](https://contributors-img.web.app).
