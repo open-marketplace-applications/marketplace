@@ -1,5 +1,5 @@
 module.exports = {
-  greeting: 'Hallo Welt!',
+  welcome: 'Willkommen in',
   home: {
     available: 'Vorverkauf',
     title: 'Das erste einfachIOTA Magazin in Englisch.',

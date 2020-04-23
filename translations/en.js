@@ -1,5 +1,5 @@
 module.exports = {
-  greeting: 'Hello world!',
+  welcome: 'Welome to',
   home: {
     available: 'Now available',
     title: 'The first einfachIOTA magazine.',

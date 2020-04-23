@@ -3,7 +3,7 @@
     <img class="bg-image" :src="heroImageUrl">
     <div class="layer"></div>
     <div class="hello">
-      <h2 class="welcome">Welcome to</h2>
+      <h2 class="welcome">{{ $t('welcome') }}</h2>
       <h1 class="title">{{ title }}</h1>
     </div>
 
