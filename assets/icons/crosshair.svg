@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
+  <g id="Gruppe_1171" data-name="Gruppe 1171" transform="translate(-945 -1449)">
+    <g id="Gruppe_1169" data-name="Gruppe 1169" transform="translate(11.603 11.603)">
+      <g id="sniper" transform="translate(934.378 1438.376)">
+        <g id="Gruppe_1168" data-name="Gruppe 1168" transform="translate(0 0)">
+          <circle id="Ellipse_36" data-name="Ellipse 36" cx="3.051" cy="3.051" r="3.051" transform="translate(11.31 11.31)" fill="#0f282b"/>
+          <path id="Pfad_4718" data-name="Pfad 4718" d="M5.952,3.507,3.613.351C2.937-.325,1.432.083.756.759S-.329,2.94.347,3.617L3.5,5.956A1.732,1.732,0,1,0,5.952,3.507Z" transform="translate(0 -0.004)" fill="#0f282b"/>
+          <path id="Pfad_4719" data-name="Pfad 4719" d="M319.209.759c-.677-.677-2.181-1.085-2.857-.408l-2.339,3.155a1.732,1.732,0,0,0,2.449,2.449l3.155-2.339C320.293,2.94,319.885,1.436,319.209.759Z" transform="translate(-291.24 -0.004)" fill="#0f282b"/>
+          <path id="Pfad_4720" data-name="Pfad 4720" d="M316.461,314.007a1.732,1.732,0,0,0-2.449,2.449l2.339,3.155c.677.676,2.181.268,2.857-.408s1.085-2.181.408-2.857Z" transform="translate(-291.24 -291.236)" fill="#0f282b"/>
+          <path id="Pfad_4721" data-name="Pfad 4721" d="M3.5,314.013.347,316.352c-.677.677-.268,2.181.408,2.857s2.181,1.085,2.857.408l2.339-3.155A1.732,1.732,0,1,0,3.5,314.013Z" transform="translate(0 -291.242)" fill="#0f282b"/>
+        </g>
+      </g>
+      <g id="Ellipse_37" data-name="Ellipse 37" transform="translate(933.397 1437.397)" fill="none" stroke="#000" stroke-width="2">
+        <circle cx="15.5" cy="15.5" r="15.5" stroke="none"/>
+        <circle cx="15.5" cy="15.5" r="14.5" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>
