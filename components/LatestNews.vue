@@ -1,5 +1,5 @@
 <template>
-  <div class="latest-news">
+  <div v-if="posts" class="latest-news">
     <h2>Latest news</h2>
     <div class="news-cards">
         <NewsCard :post="post" v-for="post in posts" v-bind:key="post.id" />
@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      posts: []
+      posts: null
     };
   },
   async created() {
@@ -35,7 +35,21 @@ export default {
 
 <style lang="scss" scoped>
 .latest-news {
+    position: absolute;
+    bottom: 30%;
+    left: 0;
+    color: var(--white);
+    text-align: left;
+    padding: 25px 50px;
+    padding-top: 75px;
+    width: 100%;
+    height: auto;
+    border-radius: 0 20px 20px 0;
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+    z-index: 3;
     margin-top: 50px;
+    width: 100%;
     h2 {
         width: 100%;
     }

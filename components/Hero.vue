@@ -3,28 +3,21 @@
     <img class="bg-image" :src="heroImageUrl">
     <div class="layer"></div>
     <div class="hello">
+      <h2 class="welcome">Welcome to</h2>
       <h1 class="title">{{ title }}</h1>
-      <div class="animated-heading">
-        <div class="animated-heading__container">
-          <ul class="animated-heading__container__list">
-            <li class="animated-heading__container__list__item">
-              Alle Neuigkeiten
-            </li>
-            <li class="animated-heading__container__list__item">
-              Online Einkaufen
-            </li>
-            <li class="animated-heading__container__list__item">Der Lokale Chat</li>
-            <li class="animated-heading__container__list__item">Spenden</li>
-          </ul>
-        </div>
-      </div>
     </div>
+
+    <LatestNews />
+    
     <img src="~/assets/icons/rounded-edge.svg" class="rounded-edge" />
   </div>
 </template>
 
 <script>
+import LatestNews from './LatestNews.vue'
+
 export default {
+  components: { LatestNews },
   data() {
     return {
       title: process.env.cityTitle,
@@ -37,7 +30,7 @@ export default {
 <style lang="scss">
 .hero {
   position: relative;
-  height: calc(100vh);
+  height: 100vh;
   width: 100%;
   top: 0;
   right: 0;
@@ -52,7 +45,7 @@ export default {
   }
   .hello {
     position: absolute;
-    bottom: 10%;
+    bottom: 70%;
     left: 0;
     color: var(--white);
     text-align: left;
@@ -61,7 +54,7 @@ export default {
     max-width: 50%;
     height: auto;
     border-radius: 0 20px 20px 0;
-    background-color: var(--white);
+    background-color: rgba(255, 255, 255, 0.75);
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
     z-index: 3;
     h1 {
@@ -95,18 +88,7 @@ export default {
       }
     }
   }
-  video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: auto;
-    height: 100%;
-    filter: blur(5px);
-    @media only screen and (min-width: 2200px) {
-      height: auto;
-      width: 100%;
-    }
-  }
+
   .bg-image {
     position: absolute;
     top: 0;
@@ -142,213 +124,4 @@ export default {
   }
 }
 
-.animated-heading {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 160px;
-  overflow: hidden;
-  width: 90%;
-  font-size: 2em;
-  line-height: 40px;
-  color: var(--darker);
-  text-align: left;
-
-  &__container {
-    font-weight: 600;
-    overflow: hidden;
-    height: 40px;
-    padding: 0;
-    padding-left: 30px;
-
-    &:after,
-    &:before {
-      position: absolute;
-      top: 0;
-
-      color: var(--primary);
-      font-size: 1.5em;
-      line-height: 40px;
-
-      -webkit-animation-name: opacity;
-      -webkit-animation-duration: 2s;
-      -webkit-animation-iteration-count: infinite;
-      animation-name: opacity;
-      animation-duration: 2s;
-      animation-iteration-count: infinite;
-    }
-
-    &__list {
-      margin-top: 0;
-      padding-left: 0;
-      text-align: left;
-      list-style: none;
-
-      -webkit-animation-name: change;
-      -webkit-animation-duration: 10s;
-      -webkit-animation-iteration-count: infinite;
-      animation-name: change;
-      animation-duration: 10s;
-      animation-iteration-count: infinite;
-
-      &__item {
-        line-height: 40px;
-        margin: 0;
-      }
-    }
-  }
-}
-
-@-webkit-keyframes opacity {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes change {
-  0%,
-  12.66%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-  16.66%,
-  29.32% {
-    transform: translate3d(0, -25%, 0);
-  }
-  33.32%,
-  45.98% {
-    transform: translate3d(0, -50%, 0);
-  }
-  49.98%,
-  62.64% {
-    transform: translate3d(0, -75%, 0);
-  }
-  66.64%,
-  79.3% {
-    transform: translate3d(0, -50%, 0);
-  }
-  83.3%,
-  95.96% {
-    transform: translate3d(0, -25%, 0);
-  }
-}
-
-@-o-keyframes opacity {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@-o-keyframes change {
-  0%,
-  12.66%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-  16.66%,
-  29.32% {
-    transform: translate3d(0, -25%, 0);
-  }
-  33.32%,
-  45.98% {
-    transform: translate3d(0, -50%, 0);
-  }
-  49.98%,
-  62.64% {
-    transform: translate3d(0, -75%, 0);
-  }
-  66.64%,
-  79.3% {
-    transform: translate3d(0, -50%, 0);
-  }
-  83.3%,
-  95.96% {
-    transform: translate3d(0, -25%, 0);
-  }
-}
-
-@-moz-keyframes opacity {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@-moz-keyframes change {
-  0%,
-  12.66%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-  16.66%,
-  29.32% {
-    transform: translate3d(0, -25%, 0);
-  }
-  33.32%,
-  45.98% {
-    transform: translate3d(0, -50%, 0);
-  }
-  49.98%,
-  62.64% {
-    transform: translate3d(0, -75%, 0);
-  }
-  66.64%,
-  79.3% {
-    transform: translate3d(0, -50%, 0);
-  }
-  83.3%,
-  95.96% {
-    transform: translate3d(0, -25%, 0);
-  }
-}
-
-@keyframes opacity {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes change {
-  0%,
-  12.66%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-  16.66%,
-  29.32% {
-    transform: translate3d(0, -25%, 0);
-  }
-  33.32%,
-  45.98% {
-    transform: translate3d(0, -50%, 0);
-  }
-  49.98%,
-  62.64% {
-    transform: translate3d(0, -75%, 0);
-  }
-  66.64%,
-  79.3% {
-    transform: translate3d(0, -50%, 0);
-  }
-  83.3%,
-  95.96% {
-    transform: translate3d(0, -25%, 0);
-  }
-}
 </style>
