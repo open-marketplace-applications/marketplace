@@ -111,8 +111,8 @@ export default {
     background: rgb(115, 252, 255);
     background: radial-gradient(
       circle,
-      rgba(115, 252, 255, 0.9) 0%,
-      rgba(115, 252, 255, 0.6) 100%
+      rgba(115, 252, 255, 0.6) 0%,
+      rgba(115, 252, 255, 0.3) 100%
     );
   }
 }
