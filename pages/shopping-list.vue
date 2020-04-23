@@ -132,7 +132,6 @@
 import Navigation from "../components/Navigation.vue";
 import CreateShop from "../components/CreateShop.vue";
 import Footer from "../components/Footer";
-import { createDeliveryRequest, createOrderChannel } from "@/utils/delivery";
 
 export default {
   components: { Navigation, CreateShop, Footer },
@@ -146,46 +145,11 @@ export default {
     };
   },
   methods: {
-    async send() {
-      this.order_text = "ast";
-      this.loading = true;
-
-      const order_channel = {
-        city_url: process.env.cityUrl,
-        public_data: this.order_form.public_data,
-      }
-
-      let {order_channel_root, order_channel_seed} = await createOrderChannel(order_channel);
-
-      const object = {
-        delivery: this.order_form,
-        order: this.order_text,
-        public_data: this.order_form.public_data,
-        order_channel_root,
-        order_channel_seed
-      };
-
-      let order_root = await createDeliveryRequest(object);
-
-      console.log("order_root", order_root);
-      //localStorage.setItem("shop", parsed);
-      this.loading = false;
-      const orderData = {
-        order_root
-      };
-      let x = await this.createOrder(orderData);
-      this.next();
+    send() {
+      console.log('send: ', order_form)
     },
     next() {
       if (this.active++ > 2) this.active = 0;
-    },
-    async createOrder(order) {
-      console.log("createOrder", order);
-      const { data } = await this.$axios.post(
-        process.env.cityUrl + "/orders",
-        order
-      );
-      console.log("data", data);
     }
   }
 };

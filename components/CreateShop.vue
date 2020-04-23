@@ -54,7 +54,6 @@
 </template>
 
 <script>
-import { createShop } from "@/utils/shop";
 import LocationChooseMap from "./shop/LocationChooseMap";
 export default {
   name: "CreateShop",
@@ -81,41 +80,15 @@ export default {
   },
   methods: {
     onSubmit: async function() {
-      // save it to mam!
+      // save it to tangle!
       console.log("onSubmit", this.form);
       console.log("this.iac)", this.form.iac);
-      this.loading = true;
-
-      let shop_root = await createShop(this.form);
-      const registerData = {
-        shop_root
-      };
-      //localStorage.setItem("shop", parsed);
-      this.loading = false;
-
-      // registerToCity
-      this.registerToCity(registerData);
     },
     onCancel() {
       this.$router.push("/");
     },
     updateIac(newIac) {
       this.form.iac = newIac;
-    },
-    async registerToCity(shop) {
-      console.log("registerToCity", shop);
-      const { data } = await this.$axios.post(
-        process.env.cityUrl + "/shops",
-        shop
-      );
-      console.log("data", data);
-       this.$message({
-            type: "success",
-            message: "Shop registered to this city."
-          });
-        this.$router.push({
-            path: '/'
-        })
     }
   }
 };

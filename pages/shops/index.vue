@@ -15,7 +15,6 @@
 <script>
 import Navigation from "@/components/Navigation.vue";
 import Footer from "@/components/Footer";
-const { getShopInfo } = require("@/utils/shop");
 
 export default {
   name: "shops",
@@ -26,16 +25,7 @@ export default {
     };
   },
   created() {
-    if (this.$route.query.root) {
-      getShopInfo(this.$route.query.root)
-        .then(shop => {
-          this.shop = shop
-          console.log("shop", shop);
-        })
-        .catch(err => {
-          console.log("err", err);
-        });
-    }
+    console.log('shops page created')
   }
 };
 </script>
