@@ -53,7 +53,7 @@ export default {
     return {
       url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
       zoom: 15,
-      center: [52.529797, 13.413094],
+      center: [process.env.cityLatitude, process.env.cityLongitude],
       bounds: null,
       shops: [],
       pharmacies: []
@@ -96,7 +96,7 @@ export default {
       const overpass_url = "https://lz4.overpass-api.de/api/interpreter";
       let overpass_query = `
         [out:json];
-        area[name="Berlin"];
+        area[name="${process.env.cityTitle}"];
         (node["amenity"="marketplace"](area);
           way["amenity"="marketplace"](area);
           rel["amenity"="marketplace"](area);
@@ -113,7 +113,7 @@ export default {
       }
       overpass_query = `
         [out:json];
-        area[name="Berlin"];
+        area[name="${process.env.cityTitle}"];
         (node["amenity"="pharmacy"](area);
           way["amenity"="pharmacy"](area);
           rel["amenity"="pharmacy"](area);
@@ -125,6 +125,22 @@ export default {
       if(res.data.elements) {
         this.pharmacies = res.data.elements
         console.log("pharmacies", this.pharmacies)
+      }
+
+      overpass_query = `
+        [out:json];
+        area[name="${process.env.cityTitle}"];
+        (node["shop"="bakery"](area);
+          way["shop"="bakery"](area);
+          rel["shop"="bakery"](area);
+        );
+        out center;
+      `
+      res = await this.$axios.get( `${overpass_url}?data=${overpass_query}`)
+      console.log("bakeries res", res)
+      if(res.data.elements) {
+        this.shops = [...this.shops, ...res.data.elements];
+        console.log("bakeries", res.data.elements)
       }
       // 17420 pharmacies
       // Example:
