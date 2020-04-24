@@ -1,5 +1,5 @@
 <template>
-  <div class="wall">
+  <div class="kiosk">
     <Hero />
     <LatestNews class="news" />
   </div>
