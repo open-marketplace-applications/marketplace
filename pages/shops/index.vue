@@ -1,11 +1,13 @@
 <template>
   <div id="shops">
     <Navigation />
-    <div  class="content">
-      <div v-if="shop">
-        <h5>{{shop.name}}</h5>
-        <h1>{{shop.name}}</h1>
-        <p>{{shop.description}}</p>
+    <div class="content">
+      <shop-storefront />
+      <div class="contain">
+        <shop-sidebar :pricerange.sync="highprice" />
+        <transition-group name="items" tag="section" class="products">
+          <shop-item v-for="(item, index) in products" :key="index" :item="item" :index="index" />
+        </transition-group>
       </div>
     </div>
     <Footer />
@@ -13,19 +15,34 @@
 </template>
 
 <script>
-import Navigation from "@/components/Navigation.vue";
+import Navigation from "@/components/Navigation";
+import ShopSidebar from "@/components/shop/ShopSidebar.vue";
+import ShopStorefront from "@/components/shop/ShopStorefront.vue";
+import ShopItem from "@/components/shop/ShopItem.vue";
 import Footer from "@/components/Footer";
 
 export default {
   name: "shops",
-  components: { Navigation, Footer },
+  components: { Navigation, ShopSidebar, ShopStorefront, ShopItem, Footer },
   data() {
     return {
-      shop: null
+      highprice: 300
     };
   },
+  computed: {
+    products() {
+      return this.$store.state.products.filter(el =>
+        this.$store.state.sale
+          ? el.price < this.highprice && el.sale
+          : el.price < this.highprice
+      );
+    }
+  },
+  async fetch({ store, params }) {
+    await store.dispatch("getProducts");
+  },
   created() {
-    console.log('shops page created')
+    console.log("shops page created");
   }
 };
 </script>
@@ -33,8 +50,20 @@ export default {
 <style lang="scss">
 #shops {
   .content {
+    height: 100%;
     max-width: 800px;
     margin: 20px auto;
   }
+}
+aside {
+  float: left;
+  width: 19.1489%;
+}
+
+.products {
+  width: 70%;
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
 }
 </style>

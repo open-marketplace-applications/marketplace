@@ -1,5 +1,6 @@
 <template>
   <div>
+      <nuxt-link to="/shops">Shop</nuxt-link>
       <h3>
           {{ entry.name }}
       </h3>
