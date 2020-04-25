@@ -2,8 +2,10 @@
   <div class="page">
     <Navigation />
     <Hero />
-    <h2 class="headline">Der Online Marktplatz</h2>
-    <Map v-if="showMap" />
+    <div v-if="showMap">
+      <h2 class="headline">Der Online Marktplatz</h2>
+      <Map  />
+    </div>
     <Content />
     <h2 class="headline">Jetzt online bestellen</h2>
     <OrderOptions />
@@ -30,7 +32,11 @@ export default {
       url: `${process.env.shopUrl}/en?refLink=${process.env.refAddress}`,
       showMap: process.env.showMap
     }
-  }
+  },
+  created() {
+    console.log("show", this.showMap)
+  } 
+
 }
 </script>
 

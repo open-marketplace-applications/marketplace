@@ -102,7 +102,7 @@ module.exports = {
     cityHeroImageUrl: process.env.CITY_HERO_IMGAE_URL || '',
     cityLatitude: latitude,
     cityLongitude: longitude,
-    showMap: process.env.MAP || true,
+    showMap: process.env.MAP == "false" ? false : true,
     MVM: process.env.MVM,
   },
   build: {
