@@ -3,7 +3,7 @@
     <Navigation />
     <Hero />
     <h2 class="headline">Der Online Marktplatz</h2>
-    <Map />
+    <Map v-if="showMap" />
     <Content />
     <h2 class="headline">Jetzt online bestellen</h2>
     <OrderOptions />
@@ -27,7 +27,8 @@ export default {
   components: { Navigation, Hero, Map, Content, OrderOptions, Socials, Footer },
   data() {
     return {
-      url: `${process.env.shopUrl}/en?refLink=${process.env.refAddress}`
+      url: `${process.env.shopUrl}/en?refLink=${process.env.refAddress}`,
+      showMap: process.env.showMap
     }
   }
 }
