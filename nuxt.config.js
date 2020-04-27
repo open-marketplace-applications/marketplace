@@ -60,7 +60,20 @@ module.exports = {
     '@nuxtjs/dotenv',
     'nuxt-i18n',
     'nuxt-leaflet',
+    '@nuxtjs/auth',
   ],
+  auth: {
+    // Options
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/auth/login', method: 'post', propertyName: 'data.token' },
+          logout: { url: '/auth/logout', method: 'post' },
+          user: { url: '/auth/user', method: 'get', propertyName: 'user' }
+        },
+      },
+    }
+  },
   i18n: {
     locales: [
       {
@@ -91,6 +104,7 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: 'http://localhost:5000/api/v1'
   },
   /*
   ** Build configuration
