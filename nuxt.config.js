@@ -42,7 +42,8 @@ module.exports = {
   */
   plugins: [
     '@/plugins/element-ui',
-    { src:'@/plugins/iota-payment', ssr:  true }
+    { src:'@/plugins/iota-payment', ssr:  true },
+    { src: '~/plugins/kalendar', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -67,7 +68,7 @@ module.exports = {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/auth/login', method: 'post', propertyName: 'data.token' },
+          login: { url: '/login', method: 'post', propertyName: 'data.token' },
           logout: { url: '/auth/logout', method: 'post' },
           user: { url: '/auth/user', method: 'get', propertyName: 'user' }
         },
@@ -104,7 +105,7 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'http://localhost:5000/api/v1'
+    baseURL: process.env.CITY_URL || 'http://localhost:5000'
   },
   /*
   ** Build configuration

@@ -8,6 +8,7 @@
         </el-tab-pane>
         <el-tab-pane label="Calender" name="second">
           <h1>Calendar</h1>
+          <Calendar />
         </el-tab-pane>
         <el-tab-pane label="Shop" name="third">
           <div class="contain">
@@ -33,10 +34,11 @@ import ShopSidebar from "@/components/shop/ShopSidebar.vue";
 import ShopStorefront from "@/components/shop/ShopStorefront.vue";
 import ShopItem from "@/components/shop/ShopItem.vue";
 import Footer from "@/components/Footer";
+import Calendar from "@/components/Calendar";
 
 export default {
   name: "shops",
-  components: { Navigation, ShopSidebar, ShopStorefront, ShopItem, Footer },
+  components: { Navigation, ShopSidebar, ShopStorefront, ShopItem, Footer, Calendar },
   data() {
     return {
       highprice: 300,
@@ -71,6 +73,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 #shops {
   .content {
     height: 100%;
