@@ -2,13 +2,26 @@
   <div id="shops">
     <Navigation />
     <div class="content">
-      <shop-storefront />
-      <div class="contain">
-        <shop-sidebar :pricerange.sync="highprice" />
-        <transition-group name="items" tag="section" class="products">
-          <shop-item v-for="(item, index) in products" :key="index" :item="item" :index="index" />
-        </transition-group>
-      </div>
+       <el-tabs v-model="activeName" @tab-click="handleClick">
+        <el-tab-pane label="Info" name="first">
+          <h1>Information</h1>
+        </el-tab-pane>
+        <el-tab-pane label="Calender" name="second">
+          <h1>Calendar</h1>
+        </el-tab-pane>
+        <el-tab-pane label="Shop" name="third">
+          <div class="contain">
+            <shop-storefront /> 
+            <shop-sidebar :pricerange.sync="highprice" />
+            <transition-group name="items" tag="section" class="products">
+              <shop-item v-for="(item, index) in products" :key="index" :item="item" :index="index" />
+            </transition-group>
+          </div>
+        </el-tab-pane>
+        <el-tab-pane label="Contact" name="fourth">
+          <h1>Contact</h1>
+        </el-tab-pane>
+      </el-tabs>
     </div>
     <Footer />
   </div>
@@ -26,16 +39,26 @@ export default {
   components: { Navigation, ShopSidebar, ShopStorefront, ShopItem, Footer },
   data() {
     return {
-      highprice: 300
+      highprice: 300,
+      activeName: 'first'
     };
+  },
+  methods: {
+    handleClick(tab, event) {
+      console.log(tab, event);
+    }
   },
   computed: {
     products() {
-      return this.$store.state.products.filter(el =>
-        this.$store.state.sale
-          ? el.price < this.highprice && el.sale
-          : el.price < this.highprice
-      );
+      if (this.$store.state.products) {
+        return this.$store.state.products.filter(el =>
+          this.$store.state.sale
+            ? el.price < this.highprice && el.sale
+            : el.price < this.highprice
+        );
+      } else {
+        return []
+      }
     }
   },
   async fetch({ store, params }) {
@@ -51,6 +74,7 @@ export default {
 #shops {
   .content {
     height: 100%;
+    min-height: 100vh;
     max-width: 800px;
     margin: 20px auto;
   }
