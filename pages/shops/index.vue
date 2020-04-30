@@ -5,6 +5,7 @@
        <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane label="Info" name="first">
           <h1>Information</h1>
+          <Order />
         </el-tab-pane>
         <el-tab-pane label="Calender" name="second">
           <h1>Calendar</h1>
@@ -35,10 +36,11 @@ import ShopStorefront from "@/components/shop/ShopStorefront.vue";
 import ShopItem from "@/components/shop/ShopItem.vue";
 import Footer from "@/components/Footer";
 import Calendar from "@/components/Calendar";
+import Order from "@/components/Order";
 
 export default {
   name: "shops",
-  components: { Navigation, ShopSidebar, ShopStorefront, ShopItem, Footer, Calendar },
+  components: { Navigation, ShopSidebar, ShopStorefront, ShopItem, Footer, Calendar, Order },
   data() {
     return {
       highprice: 300,
