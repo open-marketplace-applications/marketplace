@@ -15,7 +15,7 @@
         },
         "CITY_DESCRIPTION": {
                 "description": "Describe your City",
-                "value": "Capital City of Germany"
+                "value": "Berlin is the capital and largest city of Germany by both area and population."
         },
         "CITY_LATITUDE": {
                 "description": "City LATITUDE",
