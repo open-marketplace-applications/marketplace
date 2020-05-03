@@ -1,0 +1,7 @@
+{
+    "name": "Open Marketplace",
+    "description": "A Marketplace with Open Source applications for smart cities and local communities",
+    "repository": "https://github.com/open-marketplace-applications/marketplace",
+    "logo": "https://github.com/open-marketplace-applications/shop/raw/master/static/oma.jpg",
+    "keywords": ["marketplace", "Nuxt.js", "Vue.js"]
+  }
