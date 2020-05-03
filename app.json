@@ -3,5 +3,31 @@
     "description": "A Marketplace with Open Source applications for smart cities and local communities",
     "repository": "https://github.com/open-marketplace-applications/marketplace",
     "logo": "https://github.com/open-marketplace-applications/shop/raw/master/static/oma.jpg",
-    "keywords": ["marketplace", "Nuxt.js", "Vue.js"]
+    "keywords": ["marketplace", "Nuxt.js", "Vue.js"],
+    "website": "http://openmarketplace.org",
+    "success_url": "/welcome",
+    "env": {
+        "NODE_ENV": "production",
+        "HOST": "0.0.0.0",
+        "CITY_TITLE": {
+                "description": "Your City Title",
+                "value": "Berlin"
+        },
+        "CITY_DESCRIPTION": {
+                "description": "Describe your City",
+                "value": "Capital City of Germany"
+        },
+        "CITY_LATITUDE": {
+                "description": "City LATITUDE",
+                "value": "52.529797"
+        },
+        "CITY_LONGITUDE": {
+                "description": "City LONGITUDE",
+                "value": "13.413094"
+        },
+        "CITY_HERO_IMGAE_URL": {
+                "description": "Link to an nice image",
+                "value": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Siegessaeule_Aussicht_10-13_img4_Tiergarten.jpg/1280px-Siegessaeule_Aussicht_10-13_img4_Tiergarten.jpg"
+        }
+      }
   }
