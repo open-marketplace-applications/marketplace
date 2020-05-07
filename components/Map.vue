@@ -106,7 +106,6 @@ export default {
       let res = await this.$axios.get(
         `${overpass_url}?data=${overpass_query}`
       );     
-      console.log("marketplace res", res)
 
       if (res.data.elements) {
         this.shops = res.data.elements;
@@ -121,10 +120,8 @@ export default {
         out center;
       `
       res = await this.$axios.get( `${overpass_url}?data=${overpass_query}`)
-      console.log("pharmacies res", res)
       if(res.data.elements) {
         this.pharmacies = res.data.elements
-        console.log("pharmacies", this.pharmacies)
       }
 
       overpass_query = `
@@ -137,10 +134,8 @@ export default {
         out center;
       `
       res = await this.$axios.get( `${overpass_url}?data=${overpass_query}`)
-      console.log("bakeries res", res)
       if(res.data.elements) {
         this.shops = [...this.shops, ...res.data.elements];
-        console.log("bakeries", res.data.elements)
       }
       // 17420 pharmacies
       // Example:
