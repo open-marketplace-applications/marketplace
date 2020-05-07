@@ -45,6 +45,7 @@ module.exports = {
     { src:'@/plugins/iota-payment', ssr:  true },
     { src: '~/plugins/kalendar', ssr: false },
     { src: '~/plugins/iota-streams', ssr: true },
+    { src: '~/plugins/gun', ssr: true },
   ],
   /*
   ** Nuxt.js dev-modules

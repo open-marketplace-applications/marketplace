@@ -30,6 +30,7 @@
     "nuxt-i18n": "^6.6.1",
     "nuxt-leaflet": "0.0.21",
     "portal-vue": "^2.1.7",
+    "vue-gun": "0.0.3",
     "vue-iota-payment": "0.0.31"
   },
   "devDependencies": {
