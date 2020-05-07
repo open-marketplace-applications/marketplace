@@ -9,7 +9,7 @@ const longitude = process.env.CITY_LONGITUDE ? process.env.CITY_LONGITUDE : conf
 const gh_repo_name = process.env.GH_REPO_NAME ? process.env.GH_REPO_NAME : config.gh_repo_name;
 
 module.exports = {
-  mode: 'universal',
+  mode: 'ssr',
   router: {
     base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/' + gh_repo_name + '/' : ''
   },
@@ -126,7 +126,15 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+   extend (config, { isDev, isClient }) {
+      if (!isDev) {
+        // relative links, please.
+        if(process.env.IPFS) {
+          console.log('IPFS DEPLOY SETTINGS')
+          config.output.publicPath = './'
+        }
+      }
+      return config;
     }
   }
 }
