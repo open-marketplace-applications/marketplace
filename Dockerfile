@@ -1,5 +1,13 @@
 FROM node:12.14.0-alpine
 
+ARG HOST
+ARG CITY_TITLE
+ARG CITY_LONGITUDE
+ARG CITY_LATITUDE
+ARG CITY_HERO_IMGAE_URL
+ARG CITY_DESCRIPTION
+ARG NODE_ENV
+
 # create destination directory
 RUN mkdir -p /usr/src/nuxt-app
 WORKDIR /usr/src/nuxt-app
@@ -9,7 +17,7 @@ RUN apk update && apk upgrade
 RUN apk add git
 
 # copy the app, note .dockerignore
-COPY . /usr/src/nuxt-app/
+COPY . .
 RUN npm install
 
 # build necessary, even if no static files are needed,
@@ -26,3 +34,4 @@ ENV NUXT_PORT=3000
 
 # start the app
 CMD [ "npm", "start" ]
+
