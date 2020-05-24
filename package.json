@@ -2,7 +2,7 @@
   "name": "marketplace",
   "version": "0.0.1",
   "description": "A decentralized, commission-free, local-economy focused online shopping platform.",
-  "author": "huhn511",
+  "authors": "[huhn511 <huhn@einfachIOTA.de>, you <your@mail.org]",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
