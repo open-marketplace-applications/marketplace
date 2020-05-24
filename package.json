@@ -24,7 +24,6 @@
     "@tryghost/content-api": "^1.3.8",
     "element-ui": "^2.4.11",
     "express": "^4.16.4",
-    "iota-streams-js": "0.0.1",
     "kalendar-vue": "^2.1.0",
     "nuxt": "^2.0.0",
     "nuxt-i18n": "^6.6.1",
