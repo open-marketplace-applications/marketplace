@@ -64,7 +64,11 @@ module.exports = {
     'nuxt-i18n',
     'nuxt-leaflet',
     '@nuxtjs/auth',
+    '@nuxt/content'
   ],
+  content: {
+    dir: 'docs'
+  },
   auth: {
     // Options
     strategies: {
